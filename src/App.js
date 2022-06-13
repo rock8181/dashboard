@@ -42,16 +42,17 @@ const App = () => {
               </div>
             )}
             <div className={
-              'dark:bg-main-bg bg-main-bg min-h-screen w-full ${activeMenu ? "flex-2" :"flex-2"}'             
+              `dark:bg-main-bg bg-main-bg min-h-screen w-full  ${activeMenu ? 'md:ml-72' :'flex-2'}`             
             }>
-              <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full ">
+              <div className="fixed md:static bg-main-bg 
+              dark:bg-main-dark-bg navbar w-full">
                 <Navbar/>
               </div>
               <div>
                 <Routes>
                   {/* Dashboard */}
                   <Route path="/" element={<Ecommerce />} />
-                  <Route path="/ECommerce" element={<Ecommerce />} />
+                  <Route path="/ecommerce" element={<Ecommerce />} />
                   {/* Pages */}
                   <Route path="/orders" element={<Orders />} />
                   <Route path="/employees" element={<Employees />} />

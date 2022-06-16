@@ -8,7 +8,7 @@ import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
 import avatar from '../data/avatar.jpg';
 import {Cart, Chat, Notification, UserProfile} from '.';
-import {useSateContext} from '../contexts/ContextProvider';
+import {useStateContext} from '../contexts/ContextProvider';
 
 const NavButton = ({title, customFunc, icon,
   color, dotColor}) =>(
@@ -25,8 +25,8 @@ const NavButton = ({title, customFunc, icon,
           rounded-full h-2 w-2
            right-2 top-2"
         >
-          {icon}
         </span>
+        {icon}        
       </button>
     </TooltipComponent>
 )
@@ -34,7 +34,7 @@ const NavButton = ({title, customFunc, icon,
 
 const Navbar = () => {
   const {activeMenu, setActiveMenu, isClicked, setClicked, handleClick,
-        screenSize, setScreenSize} = useSateContext();
+        screenSize, setScreenSize} = useStateContext();
 
   useEffect(() => {
     const handleResize = () =>setScreenSize(window.innerWidth);
@@ -44,6 +44,7 @@ const Navbar = () => {
 
     return () => window.removeEventListener('resize', handleResize);
   } , []);
+
   useEffect(() => {
     if(screenSize <= 900) {
       setActiveMenu(false);
@@ -52,6 +53,7 @@ const Navbar = () => {
       setActiveMenu(true);
     }
   }, [screenSize]);
+
   return (
     <div className="flex justify-between p-2
                     md:mx-6 relative">

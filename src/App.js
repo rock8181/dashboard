@@ -9,12 +9,12 @@ import {Ecommerce, Orders, Calendar, Employees, Stacked,
    Pyramid, Financial, ColorMapping, Pie, Bar, Area, Line, 
    ColorPicker, Editor, Kanban, Customers} from './pages';
 
-import { useSateContext } from './contexts/ContextProvider';
+import { useStateContext } from './contexts/ContextProvider';
    
 import './App.css';
 
 const App = () => {
-  const {activeMenu} = useSateContext();
+  const {activeMenu} = useStateContext();
   return (
     <div>
       <BrowserRouter>
@@ -40,6 +40,7 @@ const App = () => {
               <div className='w-0 dark:bg-secondary-dark-bg'>
                 <Sidebar/>
               </div>
+              
             )}
             <div className={
               `dark:bg-main-bg bg-main-bg min-h-screen w-full  ${activeMenu ? 'md:ml-72' :'flex-2'}`             

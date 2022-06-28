@@ -54,8 +54,9 @@ const App = () => {
                   {themeSettings && <ThemeSettings/>}
                 <Routes>
                   {/* Analysis */}
-                  <Route path="/" element={<Analysis />} />
-                  <Route path="/Analysis" element={<Analysis />} />
+                  <Route path="/:id" element={<Analysis />} />
+                  {/*http://localhost:3000/Analysis/PCS_PP/123*/}
+                  <Route path="/Analysis/:product/:commitid" element={<Analysis />} />
                   {/* Dashboard */}
                   <Route path="/ecommerce" element={<Ecommerce />} />
                   {/* Pages */}

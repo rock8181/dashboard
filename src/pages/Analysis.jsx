@@ -3,18 +3,22 @@ import {Stacked, Pie, Button, SparkLine} from '../components';
 import { earningData, SparklineAreaData, ecomPieChartData } from '../data/dummy';
 import {useStateContext} from '../contexts/ContextProvider'
 import { MdOutlineSupervisorAccount } from 'react-icons/md';
+import { useParams } from 'react-router-dom';
 
 const Analysis = () => {
-    const {currentColor} = useStateContext()
+    const {currentColor} = useStateContext();
+    {/*http://localhost:3000/Analysis/PCS_PP/123*/}
+    const {product, commitid} = useParams('product', 'commitid');
     return (
         <div className="mt-12">
             <div className="flex flex-wrap justify-center ">
-                <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-44 
+                <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-64 
                 rounded-xl w-full p-8 pt-9 m-3 bg-hero-pattern bg-no-repeat bg-cover bg-center">
                     <div className="flex justify-between items-center">
                         <div>
                             <p className="font-bold text-gray-400">Product Name</p>
-                            <p className="text-2xl">PCS PP</p>
+                            <p className="text-2xl">{product}</p>
+                            <p className="text-2xl">{commitid}</p>                            
                             <div className="mt-8"><Button 
                             color="white"
                             bgColor={currentColor}

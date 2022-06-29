@@ -11,7 +11,7 @@ const Analysis = () => {
     {/*http://localhost:3000/Analysis/PCS_PP/123*/}
     const {product, commitid} = useParams('product', 'commitid');
     return (
-        <div className="mt-12 h-full bg-analysis-pattern">
+        <div className="mt-12 h-full bg-analysis-pattern bg-no-repeat bg-cover bg-center">
             <div className="flex flex-wrap justify-center ">
                 <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-72 
                     rounded-xl w-full lg:w-780 p-8 pt-9 m-3 bg-analysis-product-pattern bg-no-repeat bg-cover bg-center">

@@ -1,19 +1,20 @@
 import React from 'react'
 import {Stacked, Pie, Button, SparkLine} from '../components';
-import { earningData, SparklineAreaData, ecomPieChartData, prismbg } from '../data/dummy';
+import { earningData, SparklineAreaData, ecomPieChartData } from '../data/dummy';
 import {useStateContext} from '../contexts/ContextProvider'
 import { MdOutlineSupervisorAccount } from 'react-icons/md';
 import { useParams } from 'react-router-dom';
-
+import { ShimmerButton ,ShimmerTitle, ShimmerThumbnail } from "react-shimmer-effects";
+import { renderToStaticMarkup } from 'react-dom/server';
 const Analysis = () => {
     const {currentColor} = useStateContext();
     {/*http://localhost:3000/Analysis/PCS_PP/123*/}
     const {product, commitid} = useParams('product', 'commitid');
     return (
-        <div className="mt-12 bg-neutral-200">
+        <div className="mt-12 h-full bg-analysis-pattern">
             <div className="flex flex-wrap justify-center ">
-                <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-64 
-                rounded-xl w-full p-8 pt-9 m-3 bg-hero-pattern bg-no-repeat bg-cover bg-center">
+                <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-72 
+                    rounded-xl w-full lg:w-780 p-8 pt-9 m-3 bg-analysis-product-pattern bg-no-repeat bg-cover bg-center">
                     <div className="flex justify-between items-center">
                         <div>
                             <p className="font-bold text-gray-400">Product Name</p>
@@ -33,9 +34,10 @@ const Analysis = () => {
                 </div> {/* ernings image text layout end */}
 
                 <div className="flex m-3 flex-wrap justify-center gap-4 items-center">
-                    <div key={'sam'} className="bg-white h-44 dark:text-gray-200 
-                                dark:bg-secondary-dark-bg md:w-56  p-4 pt-9 rounded-2xl ">
+                    <div key={'sam'} className="bg-white h-72 dark:text-gray-200 
+                                dark:bg-secondary-dark-bg md:w-72  p-4 pt-9 rounded-2xl ">
                         {/*https://flowbite.com/docs/components/spinner/*/}
+                        <ShimmerTitle line={5} gap={10} variant="primary" />
                         <button disabled type="button" class="py-2.5 px-5 mr-2 text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 inline-flex items-center">
                             <svg role="status" class="inline w-4 h-4 mr-2 text-gray-200 animate-spin dark:text-gray-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/>
@@ -59,8 +61,9 @@ const Analysis = () => {
                         </p>
                         <p className="text-sm text-gray-400  mt-1">{'SAM Score'}</p>
                     </div>{/*SAM layout end*/}
-                    <div key={'Coverity'} className="bg-white h-44 dark:text-gray-200 
+                    <div key={'Coverity'} className="bg-white h-72 dark:text-gray-200 
                                 dark:bg-secondary-dark-bg md:w-56  p-4 pt-9 rounded-2xl ">
+                        <ShimmerTitle line={5} gap={10} variant="primary" />
                         <button
                         type="button"
                         style={{ color: '#03C9D7', backgroundColor: '#E5FAFB' }}
@@ -77,8 +80,9 @@ const Analysis = () => {
                         </p>
                         <p className="text-sm text-gray-400  mt-1">{'Coverity Result'}</p>
                     </div>{/*Coverity layout end*/}
-                    <div key={'Coverity'} className="bg-white h-44 dark:text-gray-200 
+                    <div key={'Coverity'} className="bg-white h-72 dark:text-gray-200 
                                 dark:bg-secondary-dark-bg md:w-56  p-4 pt-9 rounded-2xl ">
+                        <ShimmerTitle line={5} gap={10} variant="primary" />
                         <button
                         type="button"
                         style={{ color: '#03C9D7', backgroundColor: '#E5FAFB' }}

@@ -40,8 +40,11 @@ module.exports = {
       },
       backgroundImage: {
         'hero-pattern':
-          "url('https://demos.wrappixel.com/premium-admin-templates/react/flexy-react/main/static/media/welcome-bg-2x-svg.25338f53.svg')",
+          "url('https://demos.wrappixel.com/premium-admin-templates/react/flexy-react/main/static/media/welcome-bg-2x-svg.25338f53.svg')",          
+        'analysis-pattern': "url('./data/analysis_bg.svg')",
+        'analysis-product-pattern': "url('./data/subtle_prism.svg')",
         },
+      
 
       
 
